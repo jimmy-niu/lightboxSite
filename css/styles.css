@@ -36,8 +36,9 @@ body{
     padding: 4% 10% 4% 10%;
     /* background-color: var(--light-blue);
     background-color: var(--dark-grey); */
-    /* background-image: url("../media/NightSky.jpg"); */
+    
     background-color: var(--dark-grey);
+    background-image: url("../media/NightSkyBW.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 100%;
