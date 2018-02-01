@@ -18,17 +18,8 @@ $(".menu-item").click(function () {
 
     // KILL babies
     $(".modal-dialog").removeClass("show");
-    all_ids = $(".modal-dialog").toArray();
-    for(i = 0; i < all_ids.length; i++){
-        id = '#' + ($(all_ids[i]).attr('id')).split('-')[0];
-        $(id).css("opacity", "0.5");
-        $(id).css("text-decoration", "none");
-        // $(id).css("background-color", "rgba(0, 188, 212, 0.5)");
-    }
 
-
-
-
+    setModalOpacity(0.5);
     // HELP SAM. why isn't this working?
     // scrollTop: $("#about-text").offset().top - 20;
 
@@ -39,17 +30,27 @@ $(".menu-item").click(function () {
     $(menu_item_id + "-box").addClass("show");
 
 });
+function setModalOpacity(opacity){
+    all_ids = $(".modal-dialog").toArray();
+    for(i = 0; i < all_ids.length; i++){
+        id = '#' + ($(all_ids[i]).attr('id')).split('-')[0];
+        $(id).css("opacity", opacity);
+        $(id).css("text-decoration", "none");
+    }
+}
+
+$(document).keydown(function(e) {
+    if (e.keyCode == 27) {
+        $(".modal-dialog").removeClass("show");
+        setModalOpacity(1);
+        $("#mainpage").css("display", "block");
+    }
+});
 
 $(".modal-dialog .close").click(function(){
     opened = $(this).closest(".modal-dialog");
     opened.removeClass("show");
+    setModalOpacity(1);
 
-    all_ids = $(".modal-dialog").toArray();
-    for(i = 0; i < all_ids.length; i++){
-        id = '#' + ($(all_ids[i]).attr('id')).split('-')[0];
-        $(id).css("opacity", "1");
-        $(id).css("text-decoration", "none");
-        // $(id).css("background-color", "rgba(0, 188, 212, 0.5)");
-    }
     $("#mainpage").css("display", "block");
 });
