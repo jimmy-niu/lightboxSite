@@ -89,10 +89,9 @@ textarea, {
     position: fixed;
 
     pointer-events: none;
-    overflow:scroll;
+    overflow:auto;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-
 
 .modal-dialog.show{
     opacity:1;
@@ -110,7 +109,7 @@ textarea, {
     margin: auto;
     padding: 2em 4em 2em 6em;
     background-color: rgba(0, 0, 0, 0.5);
-    border: 2px white solid;
+    /* border: 2px white solid; */
     height: 100%;
 
 }
