@@ -41,8 +41,9 @@ function drawGrid(){
     c.closePath();
     c.stroke();
 
-    // Use the canvas as background. 
-    document.body.style.background = "url(" + canvas.toDataURL() + ")";
+    // Use the canvas as background.
+    $("#canvas_background").append(canvas); 
+    //document.body.style.background = "url(" + canvas.toDataURL() + ")";
 }
 
 function change_size(size){

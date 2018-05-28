@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    bindHandlers();
+    bind_handlers();
+
+    console.log("ptoato");
 
     width = $(document).width();
     height = $(document).height();
@@ -12,8 +14,9 @@ $(window).on('resize', function(){
     resize_canvas();
 });
 
-function bindHandlers(){
-    $('body').on("click", function(e){
+function bind_handlers(){
+    console.log("inside bind");
+    $(document).on("click", function(e){
         light_box(e.clientX, e.clientY);
     });
 }
