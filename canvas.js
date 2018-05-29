@@ -6,6 +6,12 @@ let canvas;
 let c;
 
 function resize_canvas(){
+    console.log("resizing!");
+    width = window.innerWidth;
+    height = window.innerHeight;
+    
+    $("#canvas_background").css("width", width);
+    $("#canvas_background").css("height", height);
     canvas.setAttribute("width", width);
     canvas.setAttribute("height", height);
 
@@ -27,13 +33,9 @@ function drawGrid(){
     c.strokeStyle = "white";
     c.lineWidth = '0.15';
     
-    squares = {};
     c.beginPath();
     for(let i = X_OFFSET; i <= width; i += SQUARE_SIZE + X_OFFSET){
         for(let j = Y_OFFSET; j <= height; j += SQUARE_SIZE + Y_OFFSET){
-            let coord = i + "," + j;
-            squares[coord] = true;
-
             c.rect(i, j, SQUARE_SIZE, SQUARE_SIZE);
             c.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE);
         }

@@ -1,40 +1,43 @@
-let lit_squares = {};
+let lit_squares = [];
 
 const SQUARE_SIZE = 15;
 const X_OFFSET = 10;
 const Y_OFFSET = 10;
 
+let possible_calls = [
+    function(index_x, index_y) {draw_from_index(index_x, index_y - 1)},
+    function(index_x, index_y) {draw_from_index(index_x, index_y + 1)},
+    function(index_x, index_y) {draw_from_index(index_x -1 , index_y)},
+    function(index_x, index_y) {draw_from_index(index_x + 1, index_y)}];
+
 function light_box(x, y){
-    console.log("inside light box");
-    let index_x = x / (SQUARE_SIZE + X_OFFSET);
-    let upper_x = Math.ceil(index_x);
-    let lower_x = Math.floor(index_x);
+    let index_x = Math.floor(x / (SQUARE_SIZE + X_OFFSET));
+    let index_y = Math.floor(y / (SQUARE_SIZE + Y_OFFSET));
 
-    let index_y = y / (SQUARE_SIZE + Y_OFFSET);
-    let upper_y = Math.ceil(index_y);
-    let lower_y = Math.floor(index_y);
+    c.beginPath();
+    draw_from_index(index_x, index_y);
 
-    draw_from_index(upper_x, upper_y);
-    draw_from_index(upper_x, lower_y);
-    draw_from_index(lower_x, upper_y);
-    draw_from_index(lower_x, lower_y);
+    let rand = Math.floor((Math.random() * 4) + 1);
+    possible_calls = shuffle(possible_calls);
+    
+    for(let i = 0; i < rand; i++){
+        possible_calls[i](index_x, index_y);
+    }
+
+    c.closePath();
+    c.stroke();
 }
 
 function draw_from_index(x, y){
-    console.log(x, y);
-
+    // let ctx = canvas. 
     c.fillStyle = "white";
     c.strokeStyle = "orange";
     c.lineWidth = '0.15';
 
-    let x_pixel = x * (X_OFFSET + SQUARE_SIZE);
-    let y_pixel = y * (Y_OFFSET + SQUARE_SIZE);
+    let x_pixel = x * (X_OFFSET + SQUARE_SIZE) + X_OFFSET;
+    let y_pixel = y * (Y_OFFSET + SQUARE_SIZE) + Y_OFFSET;
 
-    c.beginPath();
+    
     c.rect(x_pixel, y_pixel, SQUARE_SIZE, SQUARE_SIZE);
     c.fillRect(x_pixel, y_pixel, SQUARE_SIZE, SQUARE_SIZE);
-    c.closePath();
-    c.stroke();
-
-    //$("#canvas_background").append(canvas);
 }

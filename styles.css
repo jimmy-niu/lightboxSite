@@ -3,19 +3,22 @@ body{
     color: white;
     margin: 0px;
     font-family: 'Bungee Hairline', sans-serif;
-    
+    overflow: auto;
 }
 
 #header{
-    font-size: 15vh;
-    line-height: 10vh;
+    font-size: 10vh;
+    line-height: 7vh;
     font-weight: 900;
     margin: 10vh 0 2vh 0;
+    padding: 0 1vw 0 1vw;
 }
 
 #tagline{
     color: orange;
-    font-size: 4vh;
+    padding: 0 1vw 0 1vw;
+    font-size: 3vh;
+    line-height: 5vh;
     font-weight: 800;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
@@ -41,6 +44,7 @@ body{
 div{
     text-align: center;
     flex: 0 1 100%;
+    margin: 0px;
 }
 
 #canvas_background{
@@ -48,8 +52,9 @@ div{
     z-index: -1;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     margin: 0px;
 }
 
+canvas{
+    margin: 0px;
+}
