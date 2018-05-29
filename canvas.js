@@ -30,7 +30,7 @@ function create_canvas(){
 
 function drawGrid(){
     c.fillStyle = "#050505";
-    c.strokeStyle = "white";
+    c.strokeStyle = "ghostwhite";
     c.lineWidth = '0.15';
     
     c.beginPath();
@@ -40,6 +40,15 @@ function drawGrid(){
             c.fillRect(i, j, SQUARE_SIZE, SQUARE_SIZE);
         }
     }
+    
+    // let to_draw = lit_squares;
+    lit_squares = [];
+    // let size = to_draw.length;
+    // for(let i = 0; i < size; i++){
+    //     let square = to_draw[i].coor;
+    //     draw_from_index(square.x, square.y);
+    // }
+
     c.closePath();
     c.stroke();
 

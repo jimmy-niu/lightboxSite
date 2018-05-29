@@ -1,8 +1,5 @@
 $(document).ready(function(){
     bind_handlers();
-
-    console.log("ptoato");
-
     create_canvas();
 });
 
@@ -11,7 +8,6 @@ $(window).on('resize', function(){
 });
 
 function bind_handlers(){
-    console.log("inside bind");
     $(document).on("click", function(e){
         light_box(e.clientX, e.clientY);
     });
