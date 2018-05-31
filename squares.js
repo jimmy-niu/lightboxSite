@@ -53,6 +53,6 @@ function fadeSquares(context){
     console.log(context.globalAlpha);  
     console.log(context);
     $(context).css("opacity", 0); 
-    // context.globalAlpha = 0;
+    //context.globalAlpha = 0;
 }
 
