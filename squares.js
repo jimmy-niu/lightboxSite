@@ -66,13 +66,13 @@ function fadeSquares(){
         
         coor.alpha += 0.01;
 
-        if(coor.alpha >= 0.5){
+        if(coor.alpha >= 0.4){
             console.log("we in deleting!");
             lit_squares.splice(i, 1);
             size--;
         }
     }
-    console.log(lit_squares.length);
+
     if(to_redraw && lit_squares.length === 0){
         resize_canvas();
         to_redraw = false;

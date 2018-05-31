@@ -58,3 +58,52 @@ div{
 canvas{
     margin: 0px;
 }
+
+#cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5vh 1vw 0vw 1vw;
+    justify-content: center;   
+}
+
+.card{
+    cursor: pointer;
+    max-width: 20vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #303030;
+    -webkit-transition: 0.25s; /* Safari */
+    transition: 0.25s;
+    border-radius: 5px;
+    margin: 1vh 2vw 1vh 2vw;
+    
+}
+
+.card:hover{
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 0 10px orange;
+}
+
+.card_title{
+    font-size: 5vh;
+    font-weight: 900;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #303030;
+    overflow-wrap: ellipse;
+}
+
+.card_blurb{
+    font-size: 3vh;
+    font-weight: 900;
+    line-height: 2vh;
+    color: grey;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: grey;
+    padding-bottom: 1vh;
+    overflow-wrap: clip;
+}
+
+.card_image{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
