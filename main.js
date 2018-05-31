@@ -8,7 +8,7 @@ $(window).on('resize', function(){
 });
 
 function bind_handlers(){
-    $(document).on("click", function(e){
+    $(document).on("mousemove", function(e){
         light_box(e.clientX, e.clientY);
     });
 }
