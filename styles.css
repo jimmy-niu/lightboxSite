@@ -131,17 +131,17 @@ canvas{
     margin: 0;
     display: flex;
     justify-content: space;
-    width: 100vw;
+    width: 100vw;    
 }
 
 #left_footer{
     text-align: left;
-    padding-left: 1vw;
+    margin-left: 1vw;
 }
 
 #right_footer{
     text-align: right;
-    padding-right: 1vw;
+    margin-right: 1vw;
 }
 
 a{
