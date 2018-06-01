@@ -38,7 +38,7 @@ function light_box(x, y){
 }
 
 function draw_from_index(x, y){
-    c.fillStyle = "white";
+    c.fillStyle = "grey";
     c.globalAlpha = 1;
 
     let x_pixel = x * (X_OFFSET + SQUARE_SIZE) + X_OFFSET;
@@ -67,7 +67,6 @@ function fadeSquares(){
         coor.alpha += 0.01;
 
         if(coor.alpha >= 0.4){
-            console.log("we in deleting!");
             lit_squares.splice(i, 1);
             size--;
         }
