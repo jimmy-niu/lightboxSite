@@ -20,6 +20,7 @@ function bind_handlers(){
 function set_up_mobile(){
     $("#cards").css("display", "none");
     $("#mobile_bar").css("display", "flex");
+    create_canvas();
 }
 
 function checkHash(hash, obj){
