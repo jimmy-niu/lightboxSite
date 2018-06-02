@@ -162,5 +162,10 @@ canvas{
 }
 
 a{
-    text-decoration-color: ghostwhite !important;
+    color: ghostwhite;
+    text-decoration-color: none !important;
+}
+
+#menu{
+    
 }

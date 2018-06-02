@@ -1,4 +1,5 @@
 let lit_squares = [];
+let heat_map = {};
 let to_redraw = false;
 
 const SQUARE_SIZE = 15;
@@ -10,18 +11,18 @@ $(document).ready(function(){
 });
 
 let possible_calls = [
-    function(index_x, index_y) {draw_from_index(index_x, index_y - 1)},
-    function(index_x, index_y) {draw_from_index(index_x, index_y + 1)},
-    function(index_x, index_y) {draw_from_index(index_x -1 , index_y)},
-    function(index_x, index_y) {draw_from_index(index_x + 1, index_y)}];
+    function(index_x, index_y) {light_square(index_x, index_y - 1)},
+    function(index_x, index_y) {light_square(index_x, index_y + 1)},
+    function(index_x, index_y) {light_square(index_x -1 , index_y)},
+    function(index_x, index_y) {light_square(index_x + 1, index_y)}];
 
-function light_box(x, y){
+function light_squares(x, y){
     let index_x = Math.floor(x / (SQUARE_SIZE + X_OFFSET));
     let index_y  = Math.floor(y / (SQUARE_SIZE + Y_OFFSET));
 
     c.beginPath();
 
-    draw_from_index(index_x, index_y);
+    light_square(index_x, index_y);
     
     let rand = Math.floor((Math.random() * 4) + 1);
     possible_calls = shuffle(possible_calls);
@@ -37,7 +38,7 @@ function light_box(x, y){
     to_redraw = true;
 }
 
-function draw_from_index(x, y){
+function light_square(x, y){
     c.fillStyle = "grey";
     c.globalAlpha = 1;
 
@@ -50,7 +51,10 @@ function draw_from_index(x, y){
 
     let lit = {x: x_pixel, y: y_pixel, alpha: 0.1};
     lit_squares.push(lit);
+    
+    add_to_heatmap(x, y);
 }
+
 
 function fadeSquares(){
     let size = lit_squares.length;
@@ -75,6 +79,16 @@ function fadeSquares(){
     if(to_redraw && lit_squares.length === 0){
         resize_canvas();
         to_redraw = false;
+    }
+}
+
+function add_to_heatmap(x, y){
+    let coor = {x: x, y: y};
+    let key = JSON.stringify(coor);
+    if(checkHash(heat_map, key)){
+        heat_map[key] += 1;
+    } else {
+        heat_map[key] = 1;
     }
 }
 
