@@ -6,7 +6,6 @@ let canvas;
 let c;
 
 function resize_canvas(){
-    console.log("resizing!");
     width = window.innerWidth;
     height = window.innerHeight;
     
@@ -14,7 +13,7 @@ function resize_canvas(){
     $("#canvas_background").css("height", height);
     canvas.setAttribute("width", width);
     canvas.setAttribute("height", height);
-    
+
     drawGrid();
 }
 

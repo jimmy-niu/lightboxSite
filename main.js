@@ -1,6 +1,10 @@
 $(document).ready(function(){
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/i.test(navigator.userAgent)) {
+        set_up_mobile();
+    } else{
+        create_canvas();
+    }
     bind_handlers();
-    create_canvas();
 });
 
 $(window).on('resize', function(){
@@ -11,6 +15,11 @@ function bind_handlers(){
     $(document).on("mousemove", function(e){
         light_box(e.clientX, e.clientY);
     });
+}
+
+function set_up_mobile(){
+    $("#cards").css("display", "none");
+    $("#mobile_bar").css("display", "flex");
 }
 
 function checkHash(hash, obj){

@@ -23,6 +23,7 @@ body{
     font-weight: 800;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
+    margin-bottom: 8vh;
 }
 
 .unselect{
@@ -132,6 +133,22 @@ canvas{
     display: flex;
     justify-content: space;
     width: 100vw;    
+}
+
+#mobile_bar{
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10vh 1vw 5vh 1vw;
+    justify-content: center;
+
+    color: ghostwhite;
+    padding: 0 1vw 0 1vw;
+    font-size: 3vh;
+    line-height: 5vh;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
 }
 
 #left_footer{
