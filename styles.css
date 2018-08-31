@@ -166,5 +166,6 @@ canvas{
 }
 
 a{
+    color: ghostwhite !important;
     text-decoration-color: ghostwhite !important;
 }
